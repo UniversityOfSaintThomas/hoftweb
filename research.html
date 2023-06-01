@@ -1,0 +1,245 @@
+<HTML> 
+<HEAD> 
+<TITLE>Thomas H&ouml;ft -- Research </TITLE> 
+</HEAD> 
+<BODY> 
+<TT>
+
+<BR> <H1><CENTER> Research Summary </CENTER></H1> <BR> 
+
+My research interests focus on the application of mathematical
+techniques to describe, model, and analyze physical and biological
+systems, with particular emphasis on novel image reconstruction
+methodologies and inverse problems in imaging. 
+
+<H3>Recent Projects</H3>
+<TABLE BORDER="1" CELLPADDING="12"> 
+<TR>
+  <TD> <IMG SRC="images/FTP_data.jpg" HEIGHT="200"><IMG SRC="images/FTP_phaseSmall.jpg" HEIGHT="200"><IMG SRC="images/FTP_drape.jpg" HEIGHT="200"> </TD>
+  <TD VALIGN="TOP"> <B>Fourier transform profilometry (FTP) for biometric
+    identification:</B> End-to-end algorithm development for a 3-D face
+    imaging system to be deployed at security checkpoints and
+    uncontrolled crowd areas. From left-to-right the images show FTP
+    data (subject illuminated by sinusoidal-amplitude laser fringes),
+    the reconstructed 3-D surface (colormap indicates height), and a
+    rotated surface with photograph overlay (photograph captured
+    simultaneous with fringe data).  </TD> 
+  <!--<TD>link to papers?</TD>-->
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/FTP_phaseWrap.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/FTP_phase.jpg" HEIGHT="200" WIDTH="200"></TD>
+  <TD VALIGN="TOP"> <B>Phase unwrapping for FTP and DH:</B> fast robust
+    methods to remove 2&pi; discontinuities from 2-D phase profiles
+    modulo 2&pi;. In 1-D this problem is straightforward, given
+    sufficient sampling of the signal; in 2-D it's deceptively hard.
+    In both FTP and 3-D DH, the surface profile is computed from the
+    phase of a complex image and must be unwrapped to form a smooth
+    depth map. Note the discontinuity at center in the image
+    on the left, which has been removed in the image on the right. </TD> 
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/FTP_dataRaw.jpg" HEIGHT="200" WIDTH="262"><IMG SRC="images/FTP_data.jpg" HEIGHT="200"></TD>
+  <TD VALIGN="TOP"> <B>Automatic fringe-aware glint-removal:</B> data
+    pre-processing to remove specular reflections from eyeballs,
+    glasses frames, and wet skin. Glints cause large spikes in the 3-D 
+    reconstruction and degrade biometric ID performance. Inpainting
+    and filtering methods computationally eliminate the glint without
+    distorting the FTP fringes, and avoid a costly optical hardware
+    method. </TD> 
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/FTP_spec.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/FTP_specFilt.jpg" HEIGHT="200" WIDTH="200"></TD>
+  <TD VALIGN="TOP"> <B>Automatic spectral region extraction for FTP:</B>
+    algorithm development for automatic identification of the extent
+    of the signal modulation about the fundamental fringe frequency.
+    Care must be taken not to extract too large an area to avoid
+    introducing artifacts and noise into the reconstructed phase.
+    Extracting too little reduces the scale of surface feature which
+    can be reconstructed. </TD>
+</TR>
+
+<TR>
+  <TD ALIGN="CENTER"> <IMG SRC="images/FTP_EDUphoto.jpg" HEIGHT="200"></TD>
+  <TD VALIGN="TOP"> <B>Protoype unit for demonstrations:</B> algorithms were
+    implemented in C++ and achieved target run-time speeds with good
+    ID performace and unattended operation. Planned a GPGPU
+    implementation for video-rate update of 3-D imagery and biometric ID. </TD> 
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/CoralPic.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/CoralSurf.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Proposed digital holographic 3-D mapping of coral
+  beds:</B> laboratory experiment imaging real (dead) coral in a tank of
+  saltwater. Potential to use in airborne, boat, or submarine surveys
+  of coral reefs. Left, photograph of a piece of coral. Right, 3-D
+  surface representation (phase; color indicates depth, 2&pi;-ambiguity not
+  resolved -- not "unwrapped").  </TD>
+</TR>
+
+  <TD> <IMG SRC="images/DHMultiApOne.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DHMultiApFour.jpg" HEIGHT="200" WIDTH="200"></TD>
+  <TD VALIGN="TOP"> <B>Multiaperture digital holography:</B> coherent combination of
+    several identical DH imaging systems improves image resolution
+    without the cost (in both SWAP and $) of achieving that resolution
+    in a single system. The image on the left is from one aperture;
+    few groups of bars are resolvable. The image on the right is from
+    four co-phased apertures; many groups of bars are now resolvable.
+    See below for some details on coherently combining apertures. </TD>
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/DHApertureCoPhase.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DHApsPTT.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Aperture cophasing for multiaperture digital
+    holography:</B> to coherently combine apertures, they need to be
+    aligned to within a fraction (1/12) of a wavelength
+    (near-infra-red is around 1 micron). While extremely challenging
+    using physical optics, phase corrections can easily be applied
+    computationally. The right-hand image shows six hexagonal
+    apertures co-phased to the center reference aperture. Only three
+    variables are needed: piston, tip, and tilt. The left-hand plot
+    shows iterations of Newton-Raphson optimization on isosurfaces of
+    the sharpness metric for one pair of apertures. When the sharpness
+    of an image formed by these apertures attains a maximum, the
+    apertures are co-phased.  </TD>
+</TR>
+
+<TR>
+<TR>
+  <TD> <IMG SRC="images/DHAtmosAberr.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DHAtmosCorr.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Accurate identification of atmospheric
+    turbulence distortion in simulated digital holography:</B> the effect
+    of atmospheric turbulence on propagation of reflected laser light
+    is simulated by a phase screen (left). Sharpness maximization with
+    10-100 variables (number of Zernike polynomials) is used to
+    correct the resulting blur. The identified phase screen (right)
+    approaches the projection of the simulated aberration on the
+    Zernike basis. </TD> 
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/DHDataAberr.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DHDataCorr.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Removing atmospheric turbulence distortion in long-range
+  digital holographic imagery of small objects:</B> fast methods for data.
+  Results of the above development are illustrated at left. The
+  left image is distorted by (real) atmosphere; the right image has
+  been restored using sharpness maximization in the Zernike
+  basis. Almost no detail is visible in the uncorrected image; separation
+  of the bars is discernable after restoration. Note also the presence
+  of speckle noise (blobs) as this is a single (un-averaged) image. </TD>
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/DHAtmosAnisWhole.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DHAtmosAnisSub.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Correction of anisotropy in digital holography
+  through turbulent atmosphere:</B> restoration over isoplanatic patches
+  and stitching. The assumption of a space-invariat
+  kernel (point-spread-function, PSF) fails when the severity of
+  the turbulence is large. Sharpness maximization over the whole
+  image performs poorly since it does not account for the variations
+  in the kernel. Once can independently apply sharpness maximization
+  over sub-regions of the image to obtain much better results. That
+  is, one breaks the large space-variant problem into multiple smaller
+  space-invariant problems and then stiches the results back
+  together. The left image shows restoration with a whole-image PSF; the
+  right image has been restored with a single PSF optimized for the
+  much smaller dashed box. </TD> 
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/EuropaIm.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/EuropaSurf.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Proposed digital holographic surface mapping of
+  Europa (moon of Jupiter):</B> laboratory experiments imaging wax
+  casts of features similar to the surface of Europa. Proposed to
+  include a 3-D mapper on a future planned NASA mission. Left,
+  photograph of wax cast showing flow feature. Right, 3-D surface
+  representation (phase; color indicates depth) of a portion of the wax
+  cast. </TD>
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/DHPolScene.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DHPolDepol.jpg" HEIGHT="200" WIDTH="200"><!--<IMG SRC="images/DHPolPhase.jpg" HEIGHT="200" WIDTH="200">--></TD>
+  <TD VALIGN="TOP"> <B>Polarimetric digital holography:</B> adds information
+  to imagery to enable identification of man-made materials (vehicles
+  and buildings) from natural features (rocks, trees, grass). Project
+  with two high-school student interns -- won accolades at local and
+  regional science fairs. </TD>
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/DH3DtruckRefl.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/DH3DtruckRange.jpg" HEIGHT="200" WIDTH="200"></TD>
+  <TD VALIGN="TOP"> <B>Two-wavelength digital holography for 3-D
+    imaging:</B> developed algorithms for image formation and
+    reconstruction of 3-D surfaces. Data acquire from both laboratory
+    and field-demo systems. </TD>
+</TR>
+
+<TR>
+  <TD> <!--<IMG SRC="images/WANDERmodelData.jpg" HEIGHT="200" WIDTH="400">-->
+    <IMG SRC="images/WANDERscatter.jpg" HEIGHT="200" WIDTH="400"> </TD>
+  <TD> <B>WANDER (wavelength normalized depolarization ratio): modeling
+  polarized laser backscatter for standoff detection of bio-aerosol
+  terror agents</B> such as anthrax (<I>b. anthracis</I> and
+  <I>b. globigii</I>), plague, and viruses. In particular, WANDER can
+  distinguish anthrax from common background aerosols such as dust,
+  diesel smoke, and pollen. Computational modelling supported and
+  validated the theory behind laboratory and field-test results. </TD>
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/S3sig.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/S3phase.jpg" HEIGHT="200" WIDTH="200"> </TD>
+  <TD VALIGN="TOP"> <B>Optical frequency demultiplexing for
+  high-bandwidth heterodyne laser radar:</B> modeled performance of a
+  Fabry-Perot filterbank for subdividing a wide spectral band into
+  narrower bands. </TD>
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/IPheatTrace.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/IPheatIm.jpg" HEIGHT="200" WIDTH="200"></TD>
+  <TD VALIGN="TOP"> <B>Nondestructive evaluation of spot-welds via an
+  inverse problem in thermal imaging:</B> recover size and shape of
+  subsurface spot-welds in automotive sheet metal assembly from
+  thermal videos of the sheet's surface. A transducer vibrates the
+  sheets, generating a heat source at the weld. Simplified model of 3-D heat
+  conduction to a 2-D model and applied regularization methods to
+  recover the source. Traces at left show ideal source and
+  reconstruction. Images at left show ideal source (top row),
+  simulated data (bottom row), and reconstructed source (middle
+  row). Ph.D. thesis project arising from internship with General
+  Motors Corp. </TD> 
+</TR>
+
+<TR>
+  <TD> <IMG SRC="images/MSin.jpg" HEIGHT="200" WIDTH="200"><IMG SRC="images/MSout.jpg" HEIGHT="200" WIDTH="200"></TD>
+  <TD VALIGN="TOP"> <B>Robust optimal design of an optical homogenizer
+  operating under varying input conditions:</B> designed a phase mask
+  to transform stochastically varying input (left plot) to an
+  approximate box-car output (right plot) using robust stochastic
+  optimization methods. Masters thesis project arising from internship
+  with 3M Corp. </TD> 
+</TR>
+
+<TR>
+  <TD> <!--<IMG SRC="images/beam.jpg" HEIGHT="200">-->
+    <IMG SRC="images/RbFline.jpg" HEIGHT="200" WIDTH="400"></TD>
+  <TD VALIGN="TOP"> <B>Molecular beam electric resonance
+  spectroscopy:</B> undergraduate summer research in experimental
+  physics. Improved data collection software, repaired hardware on the
+  apparatus, modified modeling software to incorporate faster
+  numerical methods. </TD>
+</TR>
+
+</TABLE> 
+
+<BR><BR> 
+Thomas H&ouml;ft's <A HREF="index.html">home page</A>.<BR> 
+Department of <A HREF="http://www.stthomas.edu/mathematics/">Mathematics</A> home page.<BR>
+University of <A HREF="http://www.stthomas.edu/">St. Thomas</A> home page.<BR> 
+
+<BR>
+Last updated 21 Jan 2011.
+
+</TT> 
+</BODY> 
+</HTML> 
